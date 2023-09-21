@@ -133,7 +133,7 @@ function TkDownloader() {
                                             <>
                                                 <Grid item lg={4} md={6} xs={12}>
                                                     <CardContent className='text-center'>
-                                                        <video className='video' width="300" height="380" controls >
+                                                        <video className='video' width="250" height="400" controls >
                                                             <source src={wmplay} type="video/mp4" />
                                                         </video>
                                                     </CardContent>
