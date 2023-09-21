@@ -1,0 +1,46 @@
+.headerRoot {
+    background: linear-gradient(90deg, rgba(235, 247, 244, 0.99) 20%, #009f73 85%);
+}
+
+@media screen and (max-width: 512px) {
+    .logohdr {
+        margin-left: 2rem;
+        width: 180px;
+    }
+}
+
+.btn {
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    border: 0;
+    border-radius: 3px;
+    color: #fff !important;
+    height: 25px;
+    padding: 10px 3px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%);
+    box-shadow: 0 3px 5px 2px rgba(255, 105, 135, .3);
+}
+
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+.navLink {
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    text-transform: Uppercase;
+    margin-right: 1rem !important;
+    text-decoration: none !important;
+}
+
+.navLink:hover {
+    color: #3B047D !important;
+    cursor: pointer !important;
+}
