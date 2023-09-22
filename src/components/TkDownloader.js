@@ -25,7 +25,8 @@ function TkDownloader() {
     const handleDownload = async () => {
         try {
             setLoading(true)
-            const response = await fetch(`http://localhost:5000/download?url=${videoUrl}`);
+            // const response = await fetch(`http://localhost:5000/download?url=${videoUrl}`);
+            const response = await fetch(`https://tk-downloader.vercel.app/download?url=${videoUrl}`);
 
             const data = await response.json();
             if (data.msg === 'success') {
