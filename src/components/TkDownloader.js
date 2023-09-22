@@ -26,7 +26,7 @@ function TkDownloader() {
         try {
             setLoading(true)
             // const response = await fetch(`http://localhost:5000/download?url=${videoUrl}`);
-            const response = await fetch(`https://tk-downloader.vercel.app/download?url=${videoUrl}`);
+            const response = await fetch(`https://apitk.vercel.app/download?url=${videoUrl}`);
 
             const data = await response.json();
             if (data.msg === 'success') {
@@ -106,7 +106,7 @@ function TkDownloader() {
             <Grid container >
                 <Grid item xs={12}>
                     <Box marginTop={'1rem'}>
-                        <Card className='mui-card-c a-card'>
+                        <Card className='mui-card-c'>
                             <CardHeader title="Download Your Video" />
                             <CardContent>
                                 <Box style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >

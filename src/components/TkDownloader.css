@@ -66,7 +66,7 @@
     box-shadow: 0 8px 5px 2px rgba(255, 105, 135, .3);
 }
 
-.cardBG {
+.cardBG, .mui-card-c {
     background-color: #fff0 !important;
     border: 1px solid #000 !important;
 }
@@ -90,12 +90,8 @@
 .textAreaTk {
     color: #fff;
     padding-top: 1rem;
-    border: 1px solid #000;
     border-top: none;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
     background: #d3d3d300 !important;
-    /* background: #304c85; */
     padding-right: 10px;
     display: flex;
     justify-content: space-between;
