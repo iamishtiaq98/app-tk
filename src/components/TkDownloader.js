@@ -113,8 +113,8 @@ function TkDownloader() {
                                 <CardHeader title="Download Your Video" />
                                 <CardContent>
                                     <Typography variant='h6'>Paste the copied link here <ArrowDownwardIcon /></Typography>
-                                    <Box style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                                        
+                                    <Grid container spacing={2}>
+        <Grid item sm={10} xs={12}>
                                         <input
                                             className='input'
                                             type="text"
@@ -122,8 +122,12 @@ function TkDownloader() {
                                             value={videoUrl}
                                             onChange={(e) => setVideoUrl(e.target.value)}
                                         />
+                                                </Grid>
+                                                <Grid item sm={2} xs={12}>
 
                                         <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
+                                                </Grid>
+                                                </Grid>
                                     </Box>
                                     <Box><Typography variant='p' className='error'>{error}</Typography></Box>
                                 </CardContent>
