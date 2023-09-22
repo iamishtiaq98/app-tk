@@ -113,6 +113,7 @@ function TkDownloader() {
                                 <CardHeader title="Download Your Video" />
                                 <CardContent>
                                     <Typography variant='h6'>Paste the copied link here <ArrowDownwardIcon /></Typography>
+                                   <Box>
                                     <Grid container spacing={2}>
                                        <Grid item md={8} xs={12}>
                                          <input
@@ -127,6 +128,7 @@ function TkDownloader() {
                                            <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
                                         </Grid>
                                     </Grid>
+                                                </Box>
                                     <Box><Typography variant='p' className='error'>{error}</Typography></Box>
                                 </CardContent>
                                 <Box className='textAreaTk'>
