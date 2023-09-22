@@ -9,7 +9,7 @@ import './TkDownloader.css';
 
 function TkDownloader() {
     const [videoUrl, setVideoUrl] = useState('');
-    
+
     const [title, setTitle] = useState('');
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
@@ -36,9 +36,7 @@ function TkDownloader() {
                 setName(data?.data?.name);
                 setAvatar(data?.data?.avatar);
 
-                setWmSize((data?.data?.wmSize / (1024 * 1024)).toFixed(2));
-                setPlaySize((data?.data?.playSize / (1024 * 1024)).toFixed(2));
-                setHdSize((data?.data?.hdSize / (1024 * 1024)).toFixed(2));
+
 
                 const nwmBlobResponse = await fetch(data?.data?.nwmurl);
                 const wmplayBlobResponse = await fetch(data?.data?.wmplay);
@@ -56,6 +54,9 @@ function TkDownloader() {
                 setLoading(false);
                 setError('');
                 setTimeout(() => {
+                    setWmSize((data?.data?.wmSize / (1024 * 1024)).toFixed(2));
+                    setPlaySize((data?.data?.playSize / (1024 * 1024)).toFixed(2));
+                    setHdSize((data?.data?.hdSize / (1024 * 1024)).toFixed(2));
                     // Create download links
                     const nwmBlobUrl = URL.createObjectURL(nwmBlob);
                     const wmplayBlobUrl = URL.createObjectURL(wmplayBlob);
@@ -118,7 +119,7 @@ function TkDownloader() {
                                         value={videoUrl}
                                         onChange={(e) => setVideoUrl(e.target.value)}
                                     />
-                                    
+
                                     <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
                                 </Box>
                                 <Box><Typography variant='p' className='error'>{error}</Typography></Box>
