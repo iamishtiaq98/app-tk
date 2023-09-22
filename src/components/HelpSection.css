@@ -1,0 +1,106 @@
+.tkroot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0rem 5rem 0rem;
+    width: 90%;
+    margin-bottom: 1rem;
+}
+
+.main-highlights h5 {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.5em;
+    line-height: 1.1em;
+    text-align: center;
+    color: #252e69;
+    margin-bottom: 15px;
+    display: inline-block;
+    min-height: 60px;
+}
+
+.main-highlights .content {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+    color: #252e69;
+}
+
+.blue__block {
+    background: #00aeac;
+    box-shadow: 0 84px 84px -56px rgba(89, 64, 241, .3);
+    border-radius: 32px;
+    max-width: 950px;
+    padding: 70px 90px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    counter-reset: css-counter 0;
+}
+
+@media screen and (max-width: 512px) {
+    .blue__block{
+        padding: 50px 40px !important;
+    }
+    .blue__block h3 {
+        font-size: 1.3em !important;
+    }
+    .blue__block ol li span{
+        font-size: 18px !important;
+    }
+    .blue__block ul li {
+        font-size: 16px !important;
+    }
+}
+
+.blue__block h3 {
+    font-style: normal;
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.blue__block ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.blue__block ol .a1 {
+    font-style: normal;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 0;
+    position: relative;
+    counter-increment: css-counter 1;
+    z-index: 0;
+    padding-left: 20px;
+    padding-top: 40px;
+}
+
+.blue__block ol .a1::before {
+    content: counter(css-counter);
+    font-style: normal;
+    font-weight: 900;
+    font-size: 80px;
+    color: #252e69;
+    opacity: .3;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    z-index: -1;
+}
+
+.blue__block ul li {
+    font-style: normal;
+    font-size: 20px;
+    color: #fff;
+    z-index: 0;
+    padding-top: 10px !important;
+}
+.blue__block ul li::before {
+    content: '';
+}

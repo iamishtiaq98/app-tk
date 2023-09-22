@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { Box, Grid, Card, CardHeader, CardContent, Typography } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import loadingimg from '../fonts/loading.gif';
 import './TkDownloader.css';
-
-
+import HelpSection from './HelpSection';
 
 function TkDownloader() {
     const [videoUrl, setVideoUrl] = useState('');
@@ -104,77 +104,81 @@ function TkDownloader() {
 
 
     return (
+        <>
+            <Box className='tkroot'>
+                <Grid container >
+                    <Grid item xs={12}>
+                        <Box marginTop={'1rem'}>
+                            <Card className='mui-card-c'>
+                                <CardHeader title="Download Your Video" />
+                                <CardContent>
+                                    <Typography variant='h6'>Paste the copied link here <ArrowDownwardIcon /></Typography>
+                                    <Box style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
+                                        
+                                        <input
+                                            className='input'
+                                            type="text"
+                                            placeholder="Enter TikTok video URL"
+                                            value={videoUrl}
+                                            onChange={(e) => setVideoUrl(e.target.value)}
+                                        />
 
-        <Box className='tkroot'>
-            <Grid container >
-                <Grid item xs={12}>
-                    <Box marginTop={'1rem'}>
-                        <Card className='mui-card-c'>
-                            <CardHeader title="Download Your Video" />
-                            <CardContent>
-                                <Box style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} >
-                                    <input
-                                        className='input'
-                                        type="text"
-                                        placeholder="Enter TikTok video URL"
-                                        value={videoUrl}
-                                        onChange={(e) => setVideoUrl(e.target.value)}
-                                    />
-
-                                    <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
-                                </Box>
-                                <Box><Typography variant='p' className='error'>{error}</Typography></Box>
-                            </CardContent>
-                            <Box className='textAreaTk'>
-                                <Grid container spacing={2} >
-                                    {loading ?
-                                        <Box className="center-circular" width={"100%"} >
-                                            <img src={loadingimg} alt='loading please.....' />
-                                            {/* <CircularProgress color="warning" /> */}
-                                        </Box>
-                                        :
-                                        wmplay && (
-                                            <>
-                                                <Grid item lg={4} md={6} xs={12}>
-                                                    <CardContent className='text-center'>
-                                                        <video className='video' width="250" height="400" controls >
-                                                            <source src={wmplay} type="video/mp4" />
-                                                        </video>
-                                                    </CardContent>
-                                                </Grid>
-
-                                                <Grid item lg={8} md={6} xs={12}>
-                                                    <CardContent className='text-center'>
-                                                        <Typography variant='h5'>Download Links</Typography>
-                                                        <br />
-                                                        <CardContent className='text-start'>
-                                                            <Box className='flex text'>
-                                                                <img className='avater' src={avatar} alt={name} />
-                                                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                                                <Typography variant='p'> {name} </Typography>
-                                                            </Box>
-                                                            <Box className='flex text'>
-                                                                <Typography variant='p' className='title t1'>Video Title:&nbsp;&nbsp;</Typography>
-                                                                <Typography variant='p' className='text'> {title} </Typography><br />
-                                                            </Box>
+                                        <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
+                                    </Box>
+                                    <Box><Typography variant='p' className='error'>{error}</Typography></Box>
+                                </CardContent>
+                                <Box className='textAreaTk'>
+                                    <Grid container spacing={2} >
+                                        {loading ?
+                                            <Box className="center-circular" width={"100%"} >
+                                                <img src={loadingimg} alt='loading please.....' />
+                                                {/* <CircularProgress color="warning" /> */}
+                                            </Box>
+                                            :
+                                            wmplay && (
+                                                <>
+                                                    <Grid item lg={4} md={6} xs={12}>
+                                                        <CardContent className='text-center'>
+                                                            <video className='video' width="250" height="400" controls >
+                                                                <source src={wmplay} type="video/mp4" />
+                                                            </video>
                                                         </CardContent>
-                                                        <Box>
-                                                            <audio className='audio' controls>
-                                                                <source src={audio} type="audio/mp3" />
-                                                            </audio>
-                                                        </Box>
-                                                        <Box className='download_link'></Box>
-                                                    </CardContent>
-                                                </Grid>
-                                            </>
-                                        )}
-                                </Grid>
-                            </Box>
-                        </Card>
-                    </Box>
+                                                    </Grid>
+
+                                                    <Grid item lg={8} md={6} xs={12}>
+                                                        <CardContent className='text-center'>
+                                                            <Typography variant='h5'>Download Links</Typography>
+                                                            <br />
+                                                            <CardContent className='text-start'>
+                                                                <Box className='flex text'>
+                                                                    <img className='avater' src={avatar} alt={name} />
+                                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                                    <Typography variant='p'> {name} </Typography>
+                                                                </Box>
+                                                                <Box className='flex text'>
+                                                                    <Typography variant='p' className='title t1'>Video Title:&nbsp;&nbsp;</Typography>
+                                                                    <Typography variant='p' className='text'> {title} </Typography><br />
+                                                                </Box>
+                                                            </CardContent>
+                                                            <Box>
+                                                                <audio className='audio' controls>
+                                                                    <source src={audio} type="audio/mp3" />
+                                                                </audio>
+                                                            </Box>
+                                                            <Box className='download_link'></Box>
+                                                        </CardContent>
+                                                    </Grid>
+                                                </>
+                                            )}
+                                    </Grid>
+                                </Box>
+                            </Card>
+                        </Box>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </Box >
+            </Box >
+            <HelpSection />
+        </>
     );
 }
 
