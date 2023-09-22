@@ -112,23 +112,23 @@ function TkDownloader() {
                             <Card className='mui-card-c'>
                                 <CardHeader title="Download Your Video" />
                                 <CardContent>
-                                    <Typography variant='h6'>Paste the copied link here <ArrowDownwardIcon /></Typography>
-                                   <Box>
-                                    <Grid container spacing={2}>
-                                       <Grid item md={8} xs={12}>
-                                         <input
-                                            className='input'
-                                            type="text"
-                                            placeholder="Enter TikTok video URL"
-                                            value={videoUrl}
-                                            onChange={(e) => setVideoUrl(e.target.value)}
-                                          />
+                                    <Typography variant='h6' className='para'>Paste the copied link here <ArrowDownwardIcon /></Typography>
+                                    <Box >
+                                        <Grid container spacing={4}>
+                                            <Grid item sm={8} xs={12}>
+                                                <input
+                                                    className='input'
+                                                    type="text"
+                                                    placeholder="Enter TikTok video URL"
+                                                    value={videoUrl}
+                                                    onChange={(e) => setVideoUrl(e.target.value)}
+                                                />
+                                            </Grid>
+                                            <Grid item sm={4} xs={12}>
+                                                <Button className='btnReset' onClick={handleDownload}> <SearchIcon /> Search</Button>
+                                            </Grid>
                                         </Grid>
-                                        <Grid item md={4} xs={12}>
-                                           <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
-                                        </Grid>
-                                    </Grid>
-                                                </Box>
+                                    </Box>
                                     <Box><Typography variant='p' className='error'>{error}</Typography></Box>
                                 </CardContent>
                                 <Box className='textAreaTk'>
