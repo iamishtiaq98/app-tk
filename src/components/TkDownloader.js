@@ -114,21 +114,19 @@ function TkDownloader() {
                                 <CardContent>
                                     <Typography variant='h6'>Paste the copied link here <ArrowDownwardIcon /></Typography>
                                     <Grid container spacing={2}>
-        <Grid item md={10} xs={12}>
-                                        <input
+                                       <Grid item md={8} xs={12}>
+                                         <input
                                             className='input'
                                             type="text"
                                             placeholder="Enter TikTok video URL"
                                             value={videoUrl}
                                             onChange={(e) => setVideoUrl(e.target.value)}
-                                        />
-                                                </Grid>
-                                                <Grid item md={2} xs={12}>
-
-                                        <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
-                                                </Grid>
-                                                </Grid>
-                                    
+                                          />
+                                        </Grid>
+                                        <Grid item md={4} xs={12}>
+                                           <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
+                                        </Grid>
+                                    </Grid>
                                     <Box><Typography variant='p' className='error'>{error}</Typography></Box>
                                 </CardContent>
                                 <Box className='textAreaTk'>
