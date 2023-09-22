@@ -115,7 +115,7 @@ function TkDownloader() {
                                     <Typography variant='h6' className='para'>Paste the copied link here <ArrowDownwardIcon /></Typography>
                                     <Box >
                                         <Grid container spacing={4}>
-                                            <Grid item sm={8} xs={12}>
+                                            <Grid item sm={8} xs={12} className='bcd'>
                                                 <input
                                                     className='input'
                                                     type="text"
