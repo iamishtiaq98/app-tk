@@ -58,6 +58,7 @@ function HelpSection() {
                                 <li>Return to the TK-Downloader video download service.</li>
                                 <li>Paste the copied link into the text field on the page.</li>
                                 <li>Tap the "Serach" button to initiate the download process.</li>
+                                <li>Tap the button from initiated the download links that you want to download and enjoy downloading.</li>  
                             </ul>
 
                         </ListItemText>
