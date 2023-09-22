@@ -114,7 +114,7 @@ function TkDownloader() {
                                 <CardContent>
                                     <Typography variant='h6'>Paste the copied link here <ArrowDownwardIcon /></Typography>
                                     <Grid container spacing={2}>
-        <Grid item sm={10} xs={12}>
+        <Grid item md={10} xs={12}>
                                         <input
                                             className='input'
                                             type="text"
@@ -123,7 +123,7 @@ function TkDownloader() {
                                             onChange={(e) => setVideoUrl(e.target.value)}
                                         />
                                                 </Grid>
-                                                <Grid item sm={2} xs={12}>
+                                                <Grid item md={2} xs={12}>
 
                                         <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
                                                 </Grid>
