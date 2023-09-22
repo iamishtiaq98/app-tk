@@ -24,7 +24,7 @@ function TkDownloader() {
 
     const handleDownload = async () => {
         try {
-            setLoading(true)
+            setLoading(true);
             // const response = await fetch(`http://localhost:5000/download?url=${videoUrl}`);
             const response = await fetch(`https://apitk.vercel.app/download?url=${videoUrl}`);
 
@@ -54,6 +54,7 @@ function TkDownloader() {
                 const hdplayBlob = await hdplayBlobResponse.blob();
                 const audioBlob = await audioBlobResponse.blob();
                 setLoading(false);
+                setError('');
                 setTimeout(() => {
                     // Create download links
                     const nwmBlobUrl = URL.createObjectURL(nwmBlob);
