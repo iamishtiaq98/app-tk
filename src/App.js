@@ -8,7 +8,7 @@ import TkDownloader from './components/TkDownloader';
 function App() {
   
   return (
-    <div className='Approot App'>
+    <div className='App'>
       <BrowserRouter>
         <Header />
         <Routes>

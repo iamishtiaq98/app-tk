@@ -104,7 +104,8 @@ function TkDownloader() {
 
 
     return (
-        <Box padding={4} className='tkroot'>
+
+        <Box className='tkroot'>
             <Grid container >
                 <Grid item xs={12}>
                     <Box marginTop={'1rem'}>
