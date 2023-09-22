@@ -128,7 +128,7 @@ function TkDownloader() {
                                         <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
                                                 </Grid>
                                                 </Grid>
-                                    </Box>
+                                    
                                     <Box><Typography variant='p' className='error'>{error}</Typography></Box>
                                 </CardContent>
                                 <Box className='textAreaTk'>
