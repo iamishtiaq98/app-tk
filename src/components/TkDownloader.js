@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import { Box, Grid, Card, CardHeader, CardContent, Typography } from '@mui/material';
-import CircularProgress from '@mui/material/CircularProgress';
+import SearchIcon from '@mui/icons-material/Search';
+import loadingimg from '../fonts/loading.gif';
 import './TkDownloader.css';
 
 
 
-
 function TkDownloader() {
-    const [title, setTitle] = useState('');
     const [videoUrl, setVideoUrl] = useState('');
+    
+    const [title, setTitle] = useState('');
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
     // const [duration, setDuration] = useState('');
     const [audio, setAudio] = useState('');
-
     const [hdSize, setHdSize] = useState('');
     const [playSize, setPlaySize] = useState('');
     const [wmSize, setWmSize] = useState('');
@@ -22,12 +22,10 @@ function TkDownloader() {
 
     const [loading, setLoading] = useState(false)
 
-
-
     const handleDownload = async () => {
         try {
             setLoading(true)
-            const response = await fetch(`https://apitk.vercel.app/download?url=${videoUrl}`);
+            const response = await fetch(`http://localhost:5000/download?url=${videoUrl}`);
 
             const data = await response.json();
             if (data.msg === 'success') {
@@ -54,8 +52,7 @@ function TkDownloader() {
                 const wmplayBlob = await wmplayBlobResponse.blob();
                 const hdplayBlob = await hdplayBlobResponse.blob();
                 const audioBlob = await audioBlobResponse.blob();
-
-                setLoading(false)
+                setLoading(false);
                 setTimeout(() => {
                     // Create download links
                     const nwmBlobUrl = URL.createObjectURL(nwmBlob);
@@ -119,14 +116,15 @@ function TkDownloader() {
                                         value={videoUrl}
                                         onChange={(e) => setVideoUrl(e.target.value)}
                                     />
-                                    <Button className='btnReset' variant="contained" onClick={handleDownload} >Download</Button>
+                                    <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
                                 </Box>
                             </CardContent>
                             <Box className='textAreaTk'>
                                 <Grid container spacing={2} >
                                     {loading ?
                                         <Box className="center-circular" width={"100%"} >
-                                            <CircularProgress color="warning" />
+                                            <img src={loadingimg} alt='loading please.....' />
+                                            {/* <CircularProgress color="warning" /> */}
                                         </Box>
                                         :
                                         wmplay && (
@@ -144,14 +142,14 @@ function TkDownloader() {
                                                         <Typography variant='h5'>Download Links</Typography>
                                                         <br />
                                                         <CardContent className='text-start'>
-                                                            <Box className='flex'>
+                                                            <Box className='flex text'>
                                                                 <img className='avater' src={avatar} alt={name} />
-                                                                <Typography variant='p' className='title'>Video User:&nbsp;&nbsp;</Typography>
+                                                                &nbsp;&nbsp;&nbsp;&nbsp;
                                                                 <Typography variant='p'> {name} </Typography>
                                                             </Box>
-                                                            <Box className='flex'>
+                                                            <Box className='flex text'>
                                                                 <Typography variant='p' className='title t1'>Video Title:&nbsp;&nbsp;</Typography>
-                                                                <Typography variant='p'> {title} </Typography><br />
+                                                                <Typography variant='p' className='text'> {title} </Typography><br />
                                                             </Box>
                                                         </CardContent>
                                                         <Box>
