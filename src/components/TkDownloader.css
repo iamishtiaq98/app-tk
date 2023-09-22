@@ -99,6 +99,7 @@
 
 .error {
     color: rgb(218, 5, 5);
+    margin-left: 8px !important;
 }
 
 .download_link {

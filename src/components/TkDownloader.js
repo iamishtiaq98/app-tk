@@ -13,7 +13,7 @@ function TkDownloader() {
     const [title, setTitle] = useState('');
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
-    // const [duration, setDuration] = useState('');
+    const [error, setError] = useState('');
     const [audio, setAudio] = useState('');
     const [hdSize, setHdSize] = useState('');
     const [playSize, setPlaySize] = useState('');
@@ -91,12 +91,12 @@ function TkDownloader() {
 
                 }, 1200)
             } else {
-                console.log('error');
-                setLoading(false)
+                setError(data.response);
+                setLoading(false);
             }
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
-            setLoading(false)
+            setLoading(false);
         }
     };
 
@@ -117,8 +117,10 @@ function TkDownloader() {
                                         value={videoUrl}
                                         onChange={(e) => setVideoUrl(e.target.value)}
                                     />
+                                    
                                     <Button className='btnReset' variant="contained" onClick={handleDownload}> <SearchIcon /> Search</Button>
                                 </Box>
+                                <Box><Typography variant='p' className='error'>{error}</Typography></Box>
                             </CardContent>
                             <Box className='textAreaTk'>
                                 <Grid container spacing={2} >
