@@ -25,21 +25,14 @@ const Header = () => {
   return (
     <>
       <AppBar className='headerRoot' position="static" open={open}>
-        <Toolbar style={{ paddingTop: '5px' }} >
+        <Toolbar className='hdr' style={{ paddingTop: '5px' }} >
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <img className='logohdr' src={LogoImg} alt="Logo" width="248" height="60" style={{ marginLeft: '2rem' }} />
           </Typography>
-
-          {isLGScreen ?
-            (
-              <>
-                <Link style={{ display: { lg: 'block' } }} className='navLink' to="/tiktok">TikTok</Link>
-              </>
-            ) : (
-              <IconButton style={{ display: { lg: 'none' } }} onClick={handleDrawerOpen} >
-                <MenuIcon />
-              </IconButton>
-            )}
+          <Link className='navLink' to="/tiktok">TikTok</Link>
+          <IconButton className='btnopen' onClick={handleDrawerOpen}>
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </AppBar>
 
@@ -51,12 +44,12 @@ const Header = () => {
         </Box>
         <Divider />
         <Box className='navLinks'>
-        <List>
-          <ListItem>
-            <ListItemText />
-            <Link style={{ display: { lg: 'block' } }} className='navLink' to="/tiktok">TikTok</Link>
-          </ListItem>
-        </List> 
+          <List>
+            <ListItem>
+              <ListItemText />
+              <Link style={{ display: { lg: 'block' } }} className='navLink' to="/tiktok">TikTok</Link>
+            </ListItem>
+          </List>
         </Box>
       </Drawer>
     </>

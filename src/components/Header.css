@@ -64,3 +64,21 @@
 .drawer1 .navLink:hover {
     color: #fe6b8b !important;
 }
+
+.hdr .navLink {
+    display: block;
+}
+
+.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.btnopen.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+    display: none;
+}
+
+@media screen and (max-width: 599px) {
+    .hdr .navLink {
+        display: none !important;
+    }
+
+    .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.btnopen.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
+        display: inline-flex;
+    }
+}
