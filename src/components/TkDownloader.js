@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import Button from '@mui/material/Button';
-import { Box, Grid, Card, CardHeader, CardContent, Typography } from '@mui/material';
+import { Button, Box, Grid, Card, CardHeader, CardContent, Typography, FormControl, InputLabel, OutlinedInput, InputAdornment, IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ClearIcon from '@mui/icons-material/Clear';
 import loadingimg from '../fonts/loading.gif';
-import './TkDownloader.css';
 import HelpSection from './HelpSection';
+import './TkDownloader.css';
 
 function TkDownloader() {
     const [videoUrl, setVideoUrl] = useState('');
@@ -20,81 +19,97 @@ function TkDownloader() {
     const [wmSize, setWmSize] = useState('');
     const [wmplay, setWmPlay] = useState('');
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+
+    const handleInputChange = (e) => {
+        setVideoUrl(e.target.value);
+    };
+
+    const handleClear = () => {
+        setVideoUrl('');
+        setError('');
+    };
+
 
     const handleDownload = async () => {
         try {
-            setLoading(true);
-            // const response = await fetch(`http://localhost:5000/download?url=${videoUrl}`);
-            const response = await fetch(`https://apitk.vercel.app/download?url=${videoUrl}`);
 
-            const data = await response.json();
-            if (data.msg === 'success') {
-                setWmPlay(data?.data?.wmplay);
-                setAudio(data?.data?.wmplay);
-                setTitle(data?.data?.title);
-                setName(data?.data?.name);
-                setAvatar(data?.data?.avatar);
+            if (videoUrl.includes('tiktok')) {
+
+                setLoading(true);
+                // const response = await fetch(`http://localhost:5000/download?url=${videoUrl}`);
+                const response = await fetch(`https://apitk.vercel.app/download?url=${videoUrl}`);
+
+                const data = await response.json();
+                if (data.msg === 'success') {
+                    setWmPlay(data?.data?.wmplay);
+                    setAudio(data?.data?.wmplay);
+                    setTitle(data?.data?.title);
+                    setName(data?.data?.name);
+                    setAvatar(data?.data?.avatar);
 
 
 
-                const nwmBlobResponse = await fetch(data?.data?.nwmurl);
-                const wmplayBlobResponse = await fetch(data?.data?.wmplay);
-                const hdplayBlobResponse = await fetch(data?.data?.hdplay);
-                const audioBlobResponse = await fetch(data?.data?.audio);
+                    const nwmBlobResponse = await fetch(data?.data?.nwmurl);
+                    const wmplayBlobResponse = await fetch(data?.data?.wmplay);
+                    const hdplayBlobResponse = await fetch(data?.data?.hdplay);
+                    const audioBlobResponse = await fetch(data?.data?.audio);
 
-                if (!nwmBlobResponse.ok || !wmplayBlobResponse.ok || !hdplayBlobResponse.ok || !audioBlobResponse.ok) {
-                    throw new Error('One or more blob responses were not ok');
+                    if (!nwmBlobResponse.ok || !wmplayBlobResponse.ok || !hdplayBlobResponse.ok || !audioBlobResponse.ok) {
+                        throw new Error('One or more blob responses were not ok');
+                    }
+
+                    const nwmBlob = await nwmBlobResponse.blob();
+                    const wmplayBlob = await wmplayBlobResponse.blob();
+                    const hdplayBlob = await hdplayBlobResponse.blob();
+                    const audioBlob = await audioBlobResponse.blob();
+                    setLoading(false);
+                    setError('');
+                    setTimeout(() => {
+                        setWmSize((data?.data?.wmSize / (1024 * 1024)).toFixed(2));
+                        setPlaySize((data?.data?.playSize / (1024 * 1024)).toFixed(2));
+                        setHdSize((data?.data?.hdSize / (1024 * 1024)).toFixed(2));
+                        // Create download links
+                        const nwmBlobUrl = URL.createObjectURL(nwmBlob);
+                        const wmplayBlobUrl = URL.createObjectURL(wmplayBlob);
+                        const hdplayBlobUrl = URL.createObjectURL(hdplayBlob);
+                        const audioBlobUrl = URL.createObjectURL(audioBlob);
+
+                        // Create download links
+                        const nwmDownloadLink = document.createElement('a');
+                        nwmDownloadLink.href = nwmBlobUrl;
+                        nwmDownloadLink.download = 'nwm_video.mp4';
+                        nwmDownloadLink.textContent = `No Watermark .mp4 (${playSize} MB)`;
+
+                        const wmplayDownloadLink = document.createElement('a');
+                        wmplayDownloadLink.href = wmplayBlobUrl;
+                        wmplayDownloadLink.download = 'wmplay_video.mp4';
+                        wmplayDownloadLink.textContent = `Watermark .mp4 (${wmSize} MB)`;
+
+                        const hdplayDownloadLink = document.createElement('a');
+                        hdplayDownloadLink.href = hdplayBlobUrl;
+                        hdplayDownloadLink.download = 'hdplay_video.mp4';
+                        hdplayDownloadLink.textContent = `HD Video .mp4 (${hdSize} MB)`;
+
+                        const audioDownloadLink = document.createElement('a');
+                        audioDownloadLink.href = audioBlobUrl;
+                        audioDownloadLink.download = 'audio-file.mp3';
+                        audioDownloadLink.textContent = `Music .mp3`;
+
+                        // Append download links to the DOM
+                        const downloadLinkElement = document.querySelector('.download_link');
+                        downloadLinkElement.appendChild(nwmDownloadLink);
+                        downloadLinkElement.appendChild(wmplayDownloadLink);
+                        downloadLinkElement.appendChild(hdplayDownloadLink);
+                        downloadLinkElement.appendChild(audioDownloadLink);
+
+                    }, 1200)
+                } else {
+                    setError(data.response);
+                    setLoading(false);
                 }
-
-                const nwmBlob = await nwmBlobResponse.blob();
-                const wmplayBlob = await wmplayBlobResponse.blob();
-                const hdplayBlob = await hdplayBlobResponse.blob();
-                const audioBlob = await audioBlobResponse.blob();
-                setLoading(false);
-                setError('');
-                setTimeout(() => {
-                    setWmSize((data?.data?.wmSize / (1024 * 1024)).toFixed(2));
-                    setPlaySize((data?.data?.playSize / (1024 * 1024)).toFixed(2));
-                    setHdSize((data?.data?.hdSize / (1024 * 1024)).toFixed(2));
-                    // Create download links
-                    const nwmBlobUrl = URL.createObjectURL(nwmBlob);
-                    const wmplayBlobUrl = URL.createObjectURL(wmplayBlob);
-                    const hdplayBlobUrl = URL.createObjectURL(hdplayBlob);
-                    const audioBlobUrl = URL.createObjectURL(audioBlob);
-
-                    // Create download links
-                    const nwmDownloadLink = document.createElement('a');
-                    nwmDownloadLink.href = nwmBlobUrl;
-                    nwmDownloadLink.download = 'nwm_video.mp4';
-                    nwmDownloadLink.textContent = `No Watermark .mp4 (${playSize} MB)`;
-
-                    const wmplayDownloadLink = document.createElement('a');
-                    wmplayDownloadLink.href = wmplayBlobUrl;
-                    wmplayDownloadLink.download = 'wmplay_video.mp4';
-                    wmplayDownloadLink.textContent = `Watermark .mp4 (${wmSize} MB)`;
-
-                    const hdplayDownloadLink = document.createElement('a');
-                    hdplayDownloadLink.href = hdplayBlobUrl;
-                    hdplayDownloadLink.download = 'hdplay_video.mp4';
-                    hdplayDownloadLink.textContent = `HD Video .mp4 (${hdSize} MB)`;
-
-                    const audioDownloadLink = document.createElement('a');
-                    audioDownloadLink.href = audioBlobUrl;
-                    audioDownloadLink.download = 'audio-file.mp3';
-                    audioDownloadLink.textContent = `Music .mp3`;
-
-                    // Append download links to the DOM
-                    const downloadLinkElement = document.querySelector('.download_link');
-                    downloadLinkElement.appendChild(nwmDownloadLink);
-                    downloadLinkElement.appendChild(wmplayDownloadLink);
-                    downloadLinkElement.appendChild(hdplayDownloadLink);
-                    downloadLinkElement.appendChild(audioDownloadLink);
-
-                }, 1200)
             } else {
-                setError(data.response);
-                setLoading(false);
+                setError('Invalid Tiktok Url, Please enter a valid url')
             }
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);
@@ -112,24 +127,35 @@ function TkDownloader() {
                             <Card className='mui-card-c'>
                                 <CardHeader title="Download Your Video" />
                                 <CardContent>
-                                    <Typography variant='h6' className='para'>Paste the copied link here <ArrowDownwardIcon /></Typography>
-                                    <Box >
-                                        <Grid container spacing={4}>
-                                            <Grid item sm={8} xs={12} className='bcd'>
-                                                <input
-                                                    className='input'
-                                                    type="text"
-                                                    placeholder="Enter TikTok video URL"
+                                    <Grid container spacing={2} justifyContent="center">
+                                        <Grid item md={10} sm={9} xs={12}>
+                                            <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
+                                                <InputLabel htmlFor="outlined-adornment-password">Paste TikTok Video Url</InputLabel>
+                                                <OutlinedInput
+                                                    id="outlined-adornment-password"
                                                     value={videoUrl}
-                                                    onChange={(e) => setVideoUrl(e.target.value)}
+                                                    onChange={handleInputChange}
+                                                    endAdornment={
+                                                        videoUrl ?
+                                                            <InputAdornment position="end">
+                                                                < IconButton
+                                                                    aria-label="toggle password visibility"
+                                                                    edge="end"
+                                                                    onClick={handleClear}
+                                                                >
+                                                                    <ClearIcon />
+                                                                </IconButton>
+                                                            </InputAdornment>
+                                                            : ''}
+                                                    label='Paste TikTok Video Url'
                                                 />
-                                            </Grid>
-                                            <Grid item sm={4} xs={12}>
-                                                <Button className='btnReset' onClick={handleDownload}> <SearchIcon /> Search</Button>
-                                            </Grid>
+                                            </FormControl>
+                                            <Typography variant='p' className='error'>{error}</Typography>
                                         </Grid>
-                                    </Box>
-                                    <Box><Typography variant='p' className='error'>{error}</Typography></Box>
+                                        <Grid item md={2} sm={3} xs={12}>
+                                            <Button fullWidth className='btnReset' onClick={handleDownload} startIcon={<SearchIcon />} > Search</Button>
+                                        </Grid>
+                                    </Grid>
                                 </CardContent>
                                 <Box className='textAreaTk'>
                                     <Grid container spacing={2} >

@@ -14,32 +14,55 @@
 .box1 {
     display: flex;
     align-items: center;
-
 }
 
-.input {
-    height: 20px !important;
-    max-height: 20px !important;
-    width: 100% !important;
-    margin-left: 5px;
-    padding: 10px 16px !important;
-    border: 1px solid #9c9c9c !important;
-    border-radius: 2px;
+.css-78me8v-MuiFormControl-root {
+    margin: 0px !important;
 }
 
-.input:focus-visible {
-    outline: 1px solid #0ca379 !important;
-    border: 1px solid #0ca379 !important;
-    border-radius: 2px;
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root {
+    color: rgb(19, 21, 21) !important;
+}
+
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input,
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    height: 0.6em !important;
+    max-height: 0.6em !important;
+}
+
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root:hover {
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root .css-i4bv87-MuiSvgIcon-root {
+    width: 0.8em !important;
+    height: 0.8em !important;
+    border-radius: 50%;
+    background-color: #009d7247 !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border-color: #0ca379 !important;
+}
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    transform: translate(16px, 10px) scale(1) !important;
+}
+
+.clear {
+    position: absolute !important;
+    top: 0px !important;
+    right: -10px !important;
+    z-index: 99 !important;
 }
 
 @media screen and (max-width: 599px) {
-    .para{
+    .para {
         font-size: 1em !important;
     }
 }
 
-.bcd{
+.bcd {
     padding-left: 32px;
     padding-right: 32px !important;
 }
@@ -76,7 +99,8 @@
     box-shadow: 0 8px 5px 2px rgba(255, 105, 135, .3);
 }
 
-.cardBG, .mui-card-c {
+.cardBG,
+.mui-card-c {
     background-color: #fff0 !important;
     border: 1px solid #000 !important;
 }
@@ -88,7 +112,7 @@
 
 .video {
     background-color: #ffffff;
-    border-radius: 10px;    
+    border-radius: 10px;
 }
 
 .textHeader {
@@ -161,16 +185,17 @@
     align-items: center !important;
 }
 
- .title {
+.title {
     color: #da5006 !important;
     font-weight: 600 !important;
     font-size: 20px !important;
 }
 
 @media screen and (max-width: 512px) {
-  .title {
+    .title {
         font-size: 18px !important;
     }
+
     .audio {
         border-radius: 26px !important;
         width: 100%;

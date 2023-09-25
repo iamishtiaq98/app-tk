@@ -1,6 +1,17 @@
 .headerRoot {
-    background: linear-gradient(90deg, rgba(235, 247, 244, 0.99) 20%, #009f73 85%);
-    /* position: fixed !important; */
+    background: linear-gradient(245deg, rgba(235, 247, 244, 0.99) 20%, #00bfb3 85%);
+    /* background: linear-gradient(90deg, rgba(235, 247, 244, 0.99) 20%, #009f73 85%); */
+}
+
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    background: linear-gradient(0deg, rgba(2, 142, 253, 0.99) 20%, rgb(0, 191, 179) 85%);
+}
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    padding: 0px 1px;
+    justify-content: flex-start;
 }
 
 @media screen and (max-width: 512px) {
@@ -33,7 +44,7 @@
 }
 
 .navLink {
-    color: #fff !important;
+    color: #ffffff !important;
     font-size: 20px !important;
     font-weight: 600 !important;
     text-transform: Uppercase;
@@ -42,6 +53,14 @@
 }
 
 .navLink:hover {
-    color: #3B047D !important;
+    color: #fe6b8b !important;
     cursor: pointer !important;
+}
+
+.drawer1 .navLink {
+    color: #ffffff !important;
+}
+
+.drawer1 .navLink:hover {
+    color: #fe6b8b !important;
 }
