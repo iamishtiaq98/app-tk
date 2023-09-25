@@ -129,7 +129,7 @@ function TkDownloader() {
                                 <CardContent>
                                     <Grid container spacing={2} justifyContent="center">
                                         <Grid item md={10} sm={9} xs={12}>
-                                            <FormControl sx={{ m: 1, width: '100%' }} variant="outlined">
+                                            <FormControl sx={{ width: '100%' }} variant="outlined">
                                                 <InputLabel htmlFor="outlined-adornment-password">Paste TikTok Video Url</InputLabel>
                                                 <OutlinedInput
                                                     id="outlined-adornment-password"

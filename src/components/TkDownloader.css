@@ -25,7 +25,8 @@
 }
 
 .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input,
-.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
+#outlined-adornment-password, .css-1x5jdmq {
     height: 0.6em !important;
     max-height: 0.6em !important;
 }
