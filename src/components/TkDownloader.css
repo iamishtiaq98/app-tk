@@ -16,7 +16,13 @@
     align-items: center;
 }
 
-.css-78me8v-MuiFormControl-root {
+.MuiFormControl-root .css-p0rm37 {
+    font-size: 16px !important;
+    line-height: 1em !important;
+    letter-spacing: 0.3em !important;
+}
+
+  .css-78me8v-MuiFormControl-root {
     margin: 0px !important;
 }
 
@@ -26,7 +32,8 @@
 
 .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input,
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input,
-#outlined-adornment-password, .css-1x5jdmq {
+#outlined-adornment-password,
+.css-1x5jdmq {
     height: 0.6em !important;
     max-height: 0.6em !important;
 }
