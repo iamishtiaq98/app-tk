@@ -33,9 +33,11 @@ function TkDownloader() {
 
     const handleDownload = async () => {
         try {
-
-            if (videoUrl.includes('tiktok')) {
-
+            setLoading(true);
+            if (videoUrl === '') {
+                setError('Please enter a tiktok url.');
+                setLoading(false);
+            } else if (videoUrl.includes('tiktok')) {
                 setLoading(true);
                 // const response = await fetch(`http://localhost:5000/download?url=${videoUrl}`);
                 const response = await fetch(`https://apitk.vercel.app/download?url=${videoUrl}`);
@@ -109,7 +111,8 @@ function TkDownloader() {
                     setLoading(false);
                 }
             } else {
-                setError('Invalid Tiktok Url, Please enter a valid url')
+                setError('Invalid Tiktok Url, Please enter a valid url');
+                setLoading(false);
             }
         } catch (error) {
             console.error('There was a problem with the fetch operation:', error);

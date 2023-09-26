@@ -12,5 +12,15 @@
     border-radius: 0px !important;
 }
 .footerText{
-    color: #1f3662 ;
+    color: #ffffff ;
+}
+.footer-link{
+    text-decoration: none !important;
+    color: #fff !important;
+    transition: all 0.5s;
+}
+.footer-link:hover{
+    text-decoration: none !important;
+    color: rgb(10, 10, 10) !important;
+    cursor: pointer;
 }

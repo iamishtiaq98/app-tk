@@ -14,24 +14,25 @@ function HelpSection() {
         <Box className='tkroot'>
             <Grid container spacing={5} className='main-highlights' textAlign={'center'}>
                 <Grid item lg={4} xs={12}>
-                    <Box>
+                    <Box className='border-box'>
                         <img src={fileimg} alt='icon' /><br />
                         <Typography variant='h5'>Unrestricted</Typography>
                         <Typography className='content'>Save an unlimited number of videos without any limitations or restrictions.</Typography>
                     </Box>
                 </Grid>
                 <Grid item lg={4} xs={12}>
-                    <Box>
+                    <Box className='border-box'>
                         <img src={nwmimg} alt='icon' /><br />
                         <Typography variant='h5'>No Watermark!</Typography>
                         <Typography className='content'>TikTok video download without watermark, remove a TT logo.</Typography>
                     </Box>
                 </Grid>
-                <Grid item lg={4} xs={12}> <Box>
-                    <img src={audioimg} alt='icon' /><br />
-                    <Typography variant='h5'>MP4 and MP3 Options</Typography>
-                    <Typography className='content'>Preserve your videos in high-definition quality in the MP4 file format, or convert them into MP3 audio files.</Typography>
-                </Box>
+                <Grid item lg={4} xs={12}>
+                    <Box className='border-box'>
+                        <img src={audioimg} alt='icon' /><br />
+                        <Typography variant='h5'>MP4 and MP3 Options</Typography>
+                        <Typography className='content'>Preserve your videos in high-definition quality in the MP4 file format, or convert them into MP3 audio files.</Typography>
+                    </Box>
                 </Grid>
             </Grid>
             <Box className="blue__block">
@@ -58,7 +59,7 @@ function HelpSection() {
                                 <li>Return to the TK-Downloader video download service.</li>
                                 <li>Paste the copied link into the text field on the page.</li>
                                 <li>Tap the "Serach" button to initiate the download process.</li>
-                                <li>Tap the button from initiated the download links that you want to download and enjoy downloading.</li>  
+                                <li>Tap the button from initiated the download links that you want to download and enjoy downloading.</li>
                             </ul>
 
                         </ListItemText>

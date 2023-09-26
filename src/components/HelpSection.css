@@ -41,15 +41,18 @@
 }
 
 @media screen and (max-width: 512px) {
-    .blue__block{
+    .blue__block {
         padding: 50px 40px !important;
     }
+
     .blue__block h3 {
         font-size: 1.3em !important;
     }
-    .blue__block ol li span{
+
+    .blue__block ol li span {
         font-size: 18px !important;
     }
+
     .blue__block ul li {
         font-size: 16px !important;
     }
@@ -67,8 +70,9 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    
+
 }
+
 .blue__block ol .a1 {
     font-style: normal;
     font-size: 24px;
@@ -101,6 +105,19 @@
     z-index: 0;
     padding-top: 10px !important;
 }
+
 .blue__block ul li::before {
     content: '';
+}
+
+.border-box {
+    border: 1px solid #00aeac;
+    border-radius: 15px;
+    padding: 1px 5px;
+    height: 100%;
+    transition: all 0.5s;
+}
+.border-box:hover{
+    box-shadow: 0px 0px 12px 1px rgba(34, 196, 134, 0.7);
+    cursor: pointer;
 }

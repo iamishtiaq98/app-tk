@@ -5,7 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+}
+
+#root {
+  background: url('./fonts/6216.jpg') repeat-y;
+  background-size: cover;
+  background-repeat: repeat-y !important;
+
 }
 
 code {
