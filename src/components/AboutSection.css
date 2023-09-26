@@ -1,0 +1,81 @@
+.banner {
+    background-image: url("../fonts/banners/About-us-banner.png");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0 !important;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.overlay {
+    background-color: #085400;
+    opacity: 0.3;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.heading-title {
+    color: #FFFFFF;
+    font-size: 35px;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    right: 0;
+    left: 0;
+    position: absolute;
+}
+
+.mantine-5ddqmx {
+    color: rgb(102, 49, 155);
+    text-decoration: none;
+    font-family: Quicksand, sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.35;
+    margin: 0px;
+}
+
+h5 {
+    color: brown !important;
+}
+
+p {
+    color: #fcfcfc;
+}
+
+@media screen and (max-width: 599px) {
+    .about .blue__block {
+        padding: 35px 18px !important;
+        margin-top: 10px !important;
+    }
+
+    .about .blue__block h2 {
+        font-size: 1rem !important;
+    }
+
+    .about .blue__block p {
+        font-size: 14px !important;
+    }
+
+    .about .blue__block h5 {
+        font-size: 20px !important;
+    }
+
+    .about ul li {
+        flex-direction: row !important;
+        padding: 0px !important;
+    }
+
+    .about ul li span {
+        font-size: 14px !important;
+    }
+
+    .css-cveggr-MuiListItemIcon-root {
+        min-width: 33px !important;
+    }
+}

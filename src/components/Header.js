@@ -12,7 +12,7 @@ import LogoImg from '../fonts/logo.png'
 import './Header.css';
 
 const Header = () => {
-  const isLGScreen = window.innerWidth >= 1280;
+  
   const [open, setOpen] = useState(false);
 
   const handleDrawerOpen = () => {
@@ -30,6 +30,8 @@ const Header = () => {
             <img className='logohdr' src={LogoImg} alt="Logo" width="248" height="60" style={{ marginLeft: '2rem' }} />
           </Typography>
           <Link className='navLink' to="/tiktok">TikTok</Link>
+          <Link className='navLink' to="/faq">FAQ's</Link>
+          <Link className='navLink' to="/about">AboutUs</Link>
           <IconButton className='btnopen' onClick={handleDrawerOpen}>
             <MenuIcon />
           </IconButton>
@@ -44,10 +46,18 @@ const Header = () => {
         </Box>
         <Divider />
         <Box className='navLinks'>
-          <List>
+          <List className='d-flex-col'>
             <ListItem>
               <ListItemText />
               <Link style={{ display: { lg: 'block' } }} className='navLink' to="/tiktok">TikTok</Link>
+            </ListItem>
+            <ListItem>
+              <ListItemText />
+              <Link style={{ display: { lg: 'block' } }} className='navLink' to="/faq">FAQ's</Link>
+            </ListItem>
+            <ListItem>
+              <ListItemText />
+              <Link style={{ display: { lg: 'block' } }} className='navLink' to="/about">About Us</Link>
             </ListItem>
           </List>
         </Box>

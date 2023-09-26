@@ -82,3 +82,10 @@
         display: inline-flex;
     }
 }
+
+.navLinks .d-flex-col, ul li {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+    text-align: left !important;
+}

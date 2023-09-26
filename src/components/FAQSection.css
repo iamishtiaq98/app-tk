@@ -1,0 +1,107 @@
+.banner {
+    background-image: url("../fonts/banners/faq-banner.jpeg");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0 !important;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.overlay {
+    background-color: #085400;
+    opacity: 0.3;
+    transition: background 0.3s, border-radius 0.3s, opacity 0.3s;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.heading-title {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: bold !important;
+    text-transform: uppercase;
+    right: 0;
+    left: 0;
+    position: absolute;
+}
+
+@media screen and (max-width: 599px ) {
+    .heading-title{
+        font-size: 1.125rem !important;
+    }
+}
+.accordion__container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.acc {
+    margin-bottom: 8px !important;
+    margin-top: 8px !important;
+}
+.acc p, ul, li{
+    color: #252e69 !important;
+}
+
+.accordion {
+    color: #252e69 !important;
+    background: #fff;
+    border: 1.186px solid #fff;
+    box-sizing: border-box;
+    box-shadow: 0 26.2731px 38.3588px -12.6111px rgb(90 113 142 / 10%);
+    backdrop-filter: blur(7.489520000000001px);
+    border-radius: 8px;
+    width: 100%;
+    height: 88px;
+    font-style: normal;
+    font-size: 1.2em;
+    line-height: 100%;
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+}
+
+.accordion img {
+    position: absolute;
+    right: 32px;
+    top: 40px;
+    opacity: .5;
+    transform: rotate(180deg);
+}
+
+.panel div {
+    padding: 30px !important;
+}
+@media screen and (max-width: 599px) {
+    .faq .blue__block{
+        margin-top: 10px !important;
+    }
+    .panel div {
+        padding: 10px !important;
+    }  
+    .panel div ul {
+        padding: 7px !important;
+    }   
+}
+
+.panel {
+    background-color: rgb(255, 255, 255);
+    padding: 1em !important;
+    text-align: initial !important;
+    line-height: 1.2em !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 18px !important;
+    color: #252e69 !important;
+}
+
+.panel ul li {
+    margin-bottom: 15px;
+}
