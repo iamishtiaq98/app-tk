@@ -22,7 +22,7 @@
     letter-spacing: 0.3em !important;
 }
 
-  .css-78me8v-MuiFormControl-root {
+.css-78me8v-MuiFormControl-root {
     margin: 0px !important;
 }
 
@@ -186,6 +186,10 @@
     display: flex !important;
     justify-content: center !important;
 }
+.center-circular img {
+    height: 200px;
+    width: 20% !important;
+}
 
 .flex {
     display: flex !important;
@@ -207,6 +211,11 @@
     .audio {
         border-radius: 26px !important;
         width: 100%;
+    }
+
+    .center-circular img {
+        height: 200px;
+        width: 80% !important;
     }
 }
 
