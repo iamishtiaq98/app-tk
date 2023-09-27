@@ -22,7 +22,7 @@ function AboutSection() {
             </Paper>
             <Box mb={2} px={{md:10, xs:2 }} py={6} className='about'>
                 <Box className="blue__block">
-                    <Typography variant="h2" className="mantine-Text-root mantine-Title-root mantine-5ddqmx">
+                    <Typography variant="h2" className="mantine-5ddqmx h2">
                         TkDownloader.com
                     </Typography>
                     <Typography px={1} >Tiktok Video Downloader</Typography>

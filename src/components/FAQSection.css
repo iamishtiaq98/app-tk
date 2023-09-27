@@ -30,11 +30,12 @@
     position: absolute;
 }
 
-@media screen and (max-width: 599px ) {
-    .heading-title{
+@media screen and (max-width: 599px) {
+    .heading-title {
         font-size: 1.125rem !important;
     }
 }
+
 .accordion__container {
     max-width: 950px;
     margin: 0 auto;
@@ -45,7 +46,10 @@
     margin-bottom: 8px !important;
     margin-top: 8px !important;
 }
-.acc p, ul, li{
+
+.acc p,
+ul,
+li {
     color: #252e69 !important;
 }
 
@@ -79,17 +83,26 @@
 .panel div {
     padding: 30px !important;
 }
+
 @media screen and (max-width: 599px) {
-    .faq .blue__block{
+    .faq .blue__block {
         padding: 25px 18px !important;
         margin-top: 10px !important;
     }
+
     .panel div {
         padding: 10px !important;
-    }  
-    .panel div ul {
+    }
+
+    .acc .panel ul {
+        padding-left: 5px !important;
+    }
+
+    .panel ul li {
         padding: 7px !important;
-    }   
+        flex-direction: column !important;
+    }
+
 }
 
 .panel {
@@ -105,4 +118,5 @@
 
 .panel ul li {
     margin-bottom: 15px;
+    flex-direction: column !important;
 }
