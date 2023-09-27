@@ -19,7 +19,7 @@ function TkDownloader() {
     const [wmSize, setWmSize] = useState('');
     const [wmplay, setWmPlay] = useState('');
 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const handleInputChange = (e) => {
         setVideoUrl(e.target.value);
