@@ -69,8 +69,8 @@
     display: block;
 }
 
-.MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.btnopen.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
-    display: none;
+.btnopen {
+    display: none !important;
 }
 
 @media screen and (max-width: 599px) {
@@ -78,8 +78,8 @@
         display: none !important;
     }
 
-    .MuiButtonBase-root.MuiIconButton-root.MuiIconButton-sizeMedium.btnopen.css-78trlr-MuiButtonBase-root-MuiIconButton-root {
-        display: inline-flex;
+    .btnopen {
+        display: inline-flex !important;
     }
 }
 
